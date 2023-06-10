@@ -3,7 +3,7 @@ User Authentication Flow - A challenge to showcase Combine skills
 
 To gain experience using Combine, I asked ChatGPT to generate challenges to complete. This repo is my solution.
 
-##The Challenge
+## The Challenge
 
 - Present a login screen with username and password fields.
 - Validate the username and password inputs.
