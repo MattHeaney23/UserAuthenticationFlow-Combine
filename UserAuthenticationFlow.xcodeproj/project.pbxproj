@@ -15,10 +15,12 @@
 		C9E877B02A3271FF009E27F3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877AF2A3271FF009E27F3 /* AppState.swift */; };
 		C9E877B22A3273D4009E27F3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877B12A3273D4009E27F3 /* LoginViewModel.swift */; };
 		C9E877B52A327828009E27F3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877B42A327828009E27F3 /* LoginService.swift */; };
-		C9E877B82A327850009E27F3 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877B72A327850009E27F3 /* MockedData.swift */; };
+		C9E877B82A327850009E27F3 /* MockedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877B72A327850009E27F3 /* MockedService.swift */; };
 		C9E877BA2A327879009E27F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877B92A327879009E27F3 /* User.swift */; };
 		C9E877BD2A32799D009E27F3 /* DelaySimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877BC2A32799D009E27F3 /* DelaySimulator.swift */; };
 		C9E877C12A333BEB009E27F3 /* LoginViewFocusedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877C02A333BEB009E27F3 /* LoginViewFocusedField.swift */; };
+		C9E877C32A350BC5009E27F3 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877C22A350BC5009E27F3 /* LoginState.swift */; };
+		C9E877C62A3523D4009E27F3 /* View+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E877C52A3523D4009E27F3 /* View+Enabled.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +33,12 @@
 		C9E877AF2A3271FF009E27F3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C9E877B12A3273D4009E27F3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C9E877B42A327828009E27F3 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		C9E877B72A327850009E27F3 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		C9E877B72A327850009E27F3 /* MockedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedService.swift; sourceTree = "<group>"; };
 		C9E877B92A327879009E27F3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9E877BC2A32799D009E27F3 /* DelaySimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelaySimulator.swift; sourceTree = "<group>"; };
 		C9E877C02A333BEB009E27F3 /* LoginViewFocusedField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewFocusedField.swift; sourceTree = "<group>"; };
+		C9E877C22A350BC5009E27F3 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		C9E877C52A3523D4009E27F3 /* View+Enabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Enabled.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,8 @@
 				C9E877A92A3271B5009E27F3 /* Views */,
 				C9E877B32A32780B009E27F3 /* Services */,
 				C9E877B62A32783D009E27F3 /* MockedData */,
-				C9E877BB2A3278F8009E27F3 /* Helper */,
+				C9E877BB2A3278F8009E27F3 /* CustomModifiers */,
+				C9E877C42A3523C6009E27F3 /* Extensions */,
 				C9E8779F2A32718A009E27F3 /* Assets.xcassets */,
 				C9E877A12A32718A009E27F3 /* Preview Content */,
 			);
@@ -102,6 +107,7 @@
 				C9E8779D2A327189009E27F3 /* LoginView.swift */,
 				C9E877B12A3273D4009E27F3 /* LoginViewModel.swift */,
 				C9E877C02A333BEB009E27F3 /* LoginViewFocusedField.swift */,
+				C9E877C22A350BC5009E27F3 /* LoginState.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -134,17 +140,25 @@
 		C9E877B62A32783D009E27F3 /* MockedData */ = {
 			isa = PBXGroup;
 			children = (
-				C9E877B72A327850009E27F3 /* MockedData.swift */,
+				C9E877B72A327850009E27F3 /* MockedService.swift */,
 			);
 			path = MockedData;
 			sourceTree = "<group>";
 		};
-		C9E877BB2A3278F8009E27F3 /* Helper */ = {
+		C9E877BB2A3278F8009E27F3 /* CustomModifiers */ = {
 			isa = PBXGroup;
 			children = (
 				C9E877BC2A32799D009E27F3 /* DelaySimulator.swift */,
 			);
-			path = Helper;
+			path = CustomModifiers;
+			sourceTree = "<group>";
+		};
+		C9E877C42A3523C6009E27F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9E877C52A3523D4009E27F3 /* View+Enabled.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,12 +234,14 @@
 				C9E877B02A3271FF009E27F3 /* AppState.swift in Sources */,
 				C9E877B52A327828009E27F3 /* LoginService.swift in Sources */,
 				C9E877AD2A3271DD009E27F3 /* HomeView.swift in Sources */,
+				C9E877C32A350BC5009E27F3 /* LoginState.swift in Sources */,
 				C9E877BD2A32799D009E27F3 /* DelaySimulator.swift in Sources */,
 				C9E8779E2A327189009E27F3 /* LoginView.swift in Sources */,
 				C9E877BA2A327879009E27F3 /* User.swift in Sources */,
 				C9E877B22A3273D4009E27F3 /* LoginViewModel.swift in Sources */,
 				C9E877C12A333BEB009E27F3 /* LoginViewFocusedField.swift in Sources */,
-				C9E877B82A327850009E27F3 /* MockedData.swift in Sources */,
+				C9E877B82A327850009E27F3 /* MockedService.swift in Sources */,
+				C9E877C62A3523D4009E27F3 /* View+Enabled.swift in Sources */,
 				C9E8779C2A327189009E27F3 /* UserAuthenticationFlowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

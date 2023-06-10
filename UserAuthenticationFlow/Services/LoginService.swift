@@ -10,17 +10,18 @@ import Foundation
 
 ///Local networker to simulate a login request. This takes a smaller delay, and checks the username and password against the fake user details stored locally
 class LoginService {
-    func attemptLogin(username: String, password: String) -> Future<Bool, Never> {
-        Future { completion in
-            DelaySimulator.runAfterRandomDelay {
-                let user = User(username: username, password: password)
-                
-                if MockedData().mockedUsers.contains(where: { $0 == user }) {
-                    completion(.success(true))
-                } else {
-                    completion(.success(false))
+    
+    func attemptLogin(username: String, password: String) -> AnyPublisher<Bool, Never> {
+    
+        DelaySimulator
+            .randomDelay()
+            .flatMap { _ in
+                Future { promise in
+                    let userDetailsValid = MockedService().checkLoginDetails(username: username,
+                                                                             password: password)
+                    promise(.success(userDetailsValid))
                 }
             }
-        }
+            .eraseToAnyPublisher()
     }
 }

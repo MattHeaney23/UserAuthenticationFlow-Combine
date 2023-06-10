@@ -8,12 +8,6 @@
 import SwiftUI
 import Combine
 
-enum LoginState {
-    case ready
-    case loading
-    case error
-}
-
 class LoginViewModel: ObservableObject {
     
     @Published var userName: String = ""
@@ -23,8 +17,10 @@ class LoginViewModel: ObservableObject {
     @Published var loginDetailsValid: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
+    private let appState: AppState
     
-    init() {
+    init(appState: AppState) {
+        self.appState = appState
         prepareLoginValidation()
     }
     
@@ -44,7 +40,7 @@ class LoginViewModel: ObservableObject {
                 if successfulLogin == false {
                     self?.loginState = .error
                 } else {
-                    //move screen
+                    self?.appState.logUserIn()
                 }
             }
             .store(in: &cancellables)

@@ -9,4 +9,8 @@ import Foundation
 
 class AppState: ObservableObject {
     @Published public var userSignedIn = false
+    
+    public func logUserIn() {
+        self.userSignedIn = true
+    }
 }

@@ -12,7 +12,7 @@ struct LoginView: View {
     //MARK: State
     
     @FocusState private var focusedField: LoginViewFocusedField?
-    @ObservedObject var viewModel = LoginViewModel()
+    @ObservedObject var viewModel: LoginViewModel
     
     //MARK: Body
     
@@ -57,7 +57,7 @@ struct LoginView: View {
                 .focused($focusedField, equals: .password)
         }
         .textFieldStyle(.roundedBorder)
-        .disabled(viewModel.loginState == .loading)
+        .enabled(viewModel.loginState != .loading)
 
     }
     
@@ -71,7 +71,7 @@ struct LoginView: View {
             } label: {
                 Text("Login")
             }
-            .disabled(!viewModel.loginDetailsValid)
+            .enabled(viewModel.loginDetailsValid)
         }
     }
     
@@ -91,6 +91,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel(appState: AppState()))
     }
 }

@@ -15,9 +15,15 @@ struct UserAuthenticationFlowApp: App {
     var body: some Scene {
         WindowGroup {
             if appState.userSignedIn {
-                HomeView()
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Label("Home", systemImage: "house")
+                        }
+                }
             } else {
-                LoginView()
+                let loginViewModel = LoginViewModel(appState: appState)
+                LoginView(viewModel: loginViewModel)
             }
         }
     }
