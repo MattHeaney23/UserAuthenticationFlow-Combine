@@ -33,4 +33,5 @@ To gain experience using Combine, I asked ChatGPT to generate challenges to comp
 ## Screenshots
 On launch, the user is presented with a login screen. If the login is successful, then they are taken to a home screen.
 
-![Simulator Screenshot - iPhone 14 Pro - 2023-06-10 at 23 26 32](https://github.com/MattHeaney23/UserAuthenticationFlow-Combine/assets/129856192/a5ff9aed-2530-4a5a-bf53-31814b1ce8a9) ![Simulator Screenshot - iPhone 14 Pro - 2023-06-10 at 23 26 21](https://github.com/MattHeaney23/UserAuthenticationFlow-Combine/assets/129856192/7d189cba-f173-4648-85e1-475c3e87545e)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-10 at 23 26 32](https://github.com/MattHeaney23/UserAuthenticationFlow-Combine/assets/129856192/191762be-e57c-4e50-9416-acbe89761463) ![Simulator Screenshot - iPhone 14 Pro - 2023-06-10 at 23 26 21](https://github.com/MattHeaney23/UserAuthenticationFlow-Combine/assets/129856192/1dabdbda-0800-4ce2-8dc4-b9adf5f51ffc)
+
